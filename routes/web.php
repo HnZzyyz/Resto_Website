@@ -13,6 +13,10 @@ Route::middleware('auth:admin')->group(function () {
     // ------------Route Menu------------
     Route::get('menu',[MenuController::class,'index'])->name('menu');
     Route::post('menu',[MenuController::class,'create']);
+    Route::get('menu/edit/{id}',[MenuController::class,'edit']);
+    Route::post('menu/edit/{id}',[MenuController::class,'ubah']);
+    Route::get('menu/delete/{id}',[MenuController::class,'delete'])->name('HapusMenu');
+    
     // ----------End Route Menu----------
 });
 Route::get('logout',[AdminController::class,'logout'])->name('logout');

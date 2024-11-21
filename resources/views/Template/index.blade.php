@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Protocol V</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 
 <body class=" bg-body-tertiary">
@@ -15,7 +15,7 @@
         <!-- Sidebar -->
         <div id="sidebar" class="d-flex flex-column  bg-primary bg-gradient shadow vh-100">
             <div class="logo">
-                <img src="assets/img/kasir-logo.jpg" alt="" srcset="">
+                <img src="/assets/img/kasir-logo.jpg" alt="" srcset="">
             </div>
             <div class="menu p-2 d-flex flex-column gap-2">
                 <a href="{{ route('dashboard') }}"
