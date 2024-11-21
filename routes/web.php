@@ -15,7 +15,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('menu',[MenuController::class,'create']);
     Route::get('/menu/edit/{id}',[MenuController::class,'edit']);
     Route::post('/menu/edit/{id}',[MenuController::class,'ubah']);
-    Route::get('/menu/delete/{id}',[MenuController::class,'delete'])->name('HapusMenu');
+    Route::get('/menu/delete/{id}',[MenuController::class,'delete'])->name('hpsmnu');
     
     // ----------End Route Menu----------
 });
