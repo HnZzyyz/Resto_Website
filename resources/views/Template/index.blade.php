@@ -10,6 +10,33 @@
     <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 
+@if (session('pesan'))
+    <div class="alert alert-success d-flex align-items-center position-absolute top-50 start-50 translate-middle"
+        id="aj" role="alert" style="width: 300px; height: 100px; font-size: 1.1rem; justify-content: center; z-index: 9999;">
+        <div>
+            {{ session('pesan') }}
+        </div>
+    </div>
+    <script>
+        setTimeout(() => {
+            document.getElementById('aj').remove()
+        }, 2000);
+    </script>
+@endif
+@if (session('message'))
+    <div class="alert alert-success d-flex align-items-center position-absolute top-50 start-50 translate-middle"
+        id="aj" role="alert" style="width: 300px; height: 100px; font-size: 1.1rem; justify-content: center; z-index: 9999;">
+        <div>
+            {{ session('message') }}
+        </div>
+    </div>
+    <script>
+        setTimeout(() => {
+            document.getElementById('aj').remove()
+        }, 2000);
+    </script>
+@endif
+
 <body class=" bg-body-tertiary">
     <div id="main" class="d-flex">
         <!-- Sidebar -->
@@ -57,31 +84,6 @@
                 </a>
             </div>
         </div>
-        @if (session('pesan'))
-            <div class="mt-5 alert alert-danger d-flex align-items position-absolute top-50 start-50" id="ss"
-                role="alert">
-                <div>
-                    {{ session('pesan') }}
-                </div>
-            </div>
-            <script>
-                setTimeout(() => {
-                    document.getElementById('ss').remove()
-                }, 2000);
-            </script>
-        @endif
-        @if (session('message'))
-            <div class="mt-5 alert alert-success d-flex align-items position-absolute top-50 start-50" id="ss" role="alert">
-                <div>
-                    {{ session('message') }}
-                </div>
-            </div>
-            <script>
-                setTimeout(() => {
-                    document.getElementById('ss').remove()
-                }, 2000);
-            </script>
-        @endif
         <!-- Akhir Sidebar -->
         <!-- Konten Utama -->
         @yield('konten-utama')

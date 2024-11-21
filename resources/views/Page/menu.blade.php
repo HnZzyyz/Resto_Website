@@ -65,7 +65,7 @@
                                     {{ 'Rp' . number_format($a->harga, 0, ',', '.') }}
                                 </td>
                                 <td>
-                                    <a href="menu/edit/{{ $a->id_menu }}" class="btn btn-sm btn-success"><i
+                                    <a href="/menu/edit/{{ $a->id_menu }}" class="btn btn-sm btn-success"><i
                                             class="bi-pencil small"></i></a>
                                 </td>
                             </tr>
