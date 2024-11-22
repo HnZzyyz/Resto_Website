@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MenuController;
+use App\Http\Middleware\CheckRole;
 use Illuminate\Support\Facades\Route;
 
 Route::get('login',[AdminController::class,'index'])->name('login');
@@ -16,7 +17,6 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/menu/edit/{id}',[MenuController::class,'edit']);
     Route::post('/menu/edit/{id}',[MenuController::class,'ubah']);
     Route::get('/menu/delete/{id}',[MenuController::class,'delete'])->name('hpsmnu');
-    
     // ----------End Route Menu----------
 });
 Route::get('logout',[AdminController::class,'logout'])->name('logout');

@@ -12,7 +12,8 @@
 
 @if (session('pesan'))
     <div class="alert alert-success d-flex align-items-center position-absolute top-50 start-50 translate-middle"
-        id="aj" role="alert" style="width: 300px; height: 100px; font-size: 1.1rem; justify-content: center; z-index: 9999;">
+        id="aj" role="alert"
+        style="width: 300px; height: 100px; font-size: 1.1rem; justify-content: center; z-index: 9999;">
         <div>
             {{ session('pesan') }}
         </div>
@@ -25,7 +26,8 @@
 @endif
 @if (session('message'))
     <div class="alert alert-success d-flex align-items-center position-absolute top-50 start-50 translate-middle"
-        id="aj" role="alert" style="width: 300px; height: 100px; font-size: 1.1rem; justify-content: center; z-index: 9999;">
+        id="aj" role="alert"
+        style="width: 300px; height: 100px; font-size: 1.1rem; justify-content: center; z-index: 9999;">
         <div>
             {{ session('message') }}
         </div>
@@ -45,36 +47,75 @@
                 <img src="/assets/img/kasir-logo.jpg" alt="" srcset="">
             </div>
             <div class="menu p-2 d-flex flex-column gap-2">
-                <a href="{{ route('dashboard') }}"
-                    class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50 active">
-                    <span class="">Dashboard</span>
-                    <i class="bi-speedometer2 "></i>
-                </a>
-                <a href="#"
-                    class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50">
-                    <span class="">Meja</span>
-                    <i class="bi bi-person-gear "></i>
-                </a>
-                <a href="{{ route('menu') }}"
-                    class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50">
-                    <span class="">Menu</span>
-                    <i class="bi-bag "></i>
-                </a>
-                <a href="transaksi.html"
-                    class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50">
-                    <span class="">Order</span>
-                    <i class="bi-cart "></i>
-                </a>
-                <a href="transaksi.html"
-                    class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50">
-                    <span class="">Transaksi</span>
-                    <i class="bi-cart "></i>
-                </a>
-                <a href="#"
-                    class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50">
-                    <span class="">Laporan</span>
-                    <i class="bi-table "></i>
-                </a>
+                @if ()
+                    <a href="{{ route('dashboard') }}"
+                        class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50 active">
+                        <span class="">Dashboard</span>
+                        <i class="bi-speedometer2 "></i>
+                    </a>
+                    <a href="#"
+                        class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50">
+                        <span class="">Meja</span>
+                        <i class="bi bi-person-gear "></i>
+                    </a>
+                    <a href="{{ route('menu') }}"
+                        class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50">
+                        <span class="">Menu</span>
+                        <i class="bi-bag "></i>
+                    </a>
+                @endif
+                @if ($role == 'waiter')
+                    <a href="{{ route('dashboard') }}"
+                        class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50 active">
+                        <span class="">Dashboard</span>
+                        <i class="bi-speedometer2 "></i>
+                    </a>
+                    <a href="{{ route('menu') }}"
+                        class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50">
+                        <span class="">Menu</span>
+                        <i class="bi-bag "></i>
+                    </a>
+                    <a href="transaksi.html"
+                        class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50">
+                        <span class="">Order</span>
+                        <i class="bi-cart "></i>
+                    </a>
+                    <a href="#"
+                        class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50">
+                        <span class="">Laporan</span>
+                        <i class="bi-table "></i>
+                    </a>
+                @endif
+                @if ($role == 'kasir')
+                    <a href="{{ route('dashboard') }}"
+                        class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50 active">
+                        <span class="">Dashboard</span>
+                        <i class="bi-speedometer2 "></i>
+                    </a>
+                    <a href="transaksi.html"
+                        class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50">
+                        <span class="">Transaksi</span>
+                        <i class="bi-cart "></i>
+                    </a>
+                    <a href="#"
+                        class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50">
+                        <span class="">Laporan</span>
+                        <i class="bi-table "></i>
+                    </a>
+                @endif
+                @if ($role == 'owner')
+                    <a href="{{ route('dashboard') }}"
+                        class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50 active">
+                        <span class="">Dashboard</span>
+                        <i class="bi-speedometer2 "></i>
+                    </a>
+                    <a href="#"
+                        class="btn btn-light w-100 d-flex justify-content-between align-items-center px-4 text-black-50">
+                        <span class="">Laporan</span>
+                        <i class="bi-table "></i>
+                    </a>
+                @endif
+
             </div>
             <div class="logout p-2 mt-auto">
                 <a href="{{ route('logout') }}"

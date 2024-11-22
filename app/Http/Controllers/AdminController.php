@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,11 +17,14 @@ class AdminController extends Controller
             'username' => 'required',
             'password' => 'required',
         ]);
-
+        
         $token = $request->only('username','password');
+        $data = Admin::all();
+        
+        $role = $data->find($token);
 
         if(Auth::guard('admin')->attempt($token)) {
-            return redirect('/')->with('message','Berhasil Masuk!!');
+           return redirect('/')->with('message','Berhasil Login');
         } else {
             return back()->with('pesan','Username atau Password Tidak Terdaftar');
         }
