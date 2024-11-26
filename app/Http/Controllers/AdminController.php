@@ -26,7 +26,7 @@ class AdminController extends Controller
         if(Auth::guard('admin')->attempt($token)) {
            return redirect('/')->with('message','Berhasil Login');
         } else {
-            return back()->with('pesan','Username atau Password Tidak Terdaftar');
+            
         }
     }
     
